@@ -1,9 +1,9 @@
 from django.db import models
 
 class Jugador(models.Model):
-    nombre = models.CharField(max_length=30)
-    respeto =  models.IntegerField()
-    alimento = models.IntegerField()
+	nombre = models.CharField(max_length=30)
+	respeto =  models.IntegerField()
+	alimento = models.IntegerField()
 	dinero = models.IntegerField()
 	energia = models.IntegerField()
 	dopamina = models.IntegerField()
@@ -20,9 +20,3 @@ class Jugador(models.Model):
 class Historia(models.Model):
 	titulo = models.CharField(max_length=30)
 	texto = models.CharField(max_length=1024)
-	opciones = [
-        (opcion1, 'opcion1'),
-        (opcion2, 'opcion2'),
-        (opcion3, 'opcion3'),
-        (opcion4, 'opcion4'),
-    ]
