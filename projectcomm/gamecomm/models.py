@@ -17,6 +17,12 @@ class Jugador(models.Model):
 	pereza = models.IntegerField()
 	envidia = models.IntegerField()
 
+	def __str__(self):
+		return self.nombre
+
 class Historia(models.Model):
 	titulo = models.CharField(max_length=30)
 	texto = models.CharField(max_length=1024)
+
+	def __str__(self):
+		return self.titulo
