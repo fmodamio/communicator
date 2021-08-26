@@ -26,12 +26,13 @@ SECRET_KEY = os.environ['SECRET_KEY_COMMUNICATOR']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["81.37.10.93", "localhost"]
 
 CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
+    "http://81.37.10.93:8080",
 ]
 
 # Application definition
