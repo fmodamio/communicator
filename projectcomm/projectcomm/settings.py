@@ -26,13 +26,14 @@ SECRET_KEY = os.environ['SECRET_KEY_COMMUNICATOR']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["81.37.10.93", "localhost"]
+ALLOWED_HOSTS = ["81.37.10.93", "localhost", "127.0.0.1"]
 
 CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
     "http://81.37.10.93:8080",
+    "http://127.0.0.1:8080"
 ]
 
 # Application definition
@@ -134,3 +135,12 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.ScopedRateThrottle',
+    ],
+    'DEFAULT_THROTTLE_RATES': {
+        'foo.create': '10/day',
+    }
+}
